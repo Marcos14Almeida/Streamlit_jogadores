@@ -107,7 +107,8 @@ with model_training:
     y = df[['Gols']]
     
     regr.fit(x,y.values.ravel())
-    prediction = regr.predict(y)
+    print(y)
+    prediction = regr.predict(y.values.ravel())
 
 
     #Outra Coluna
