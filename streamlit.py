@@ -12,6 +12,11 @@ Created on Fri Dec 23 15:00:26 2022
 #Then in the project folder open the terminal:
 #pipreq ./
 
+#!git add "file.py"
+#!git add .
+#!git commit -m "My commit"
+#!git push origin master
+
 import pandas as pd
 import streamlit as st
 from sklearn.ensemble import RandomForestRegressor
@@ -40,6 +45,8 @@ def get_data(filename):
     df = pd.read_csv('data/'+filename+'.csv')
     return df
 
+##############################################
+##############################################
 with header:
     st.title('Welcome to my awesome project')
     st.text("""
@@ -57,15 +64,21 @@ with header:
     counting100 = pd.DataFrame(df['PAIS'].head(100).value_counts())
     st.subheader('Distribuição de origem dos jogadores')
     st.bar_chart(counting100)
-
+    
+##############################################
+##############################################
 with dataset:
     st.header('NY City Taxi dataset')    
-
+    
+##############################################
+##############################################
 with features:  
     st.header('The features I created')
     st.markdown('* **first feature** I created this feature beacause of this...')
     st.markdown('* **second feature** I created this feature beacause of this...')
 
+##############################################
+##############################################
 with model_training:    
     st.header('Time to train the model')
     st.text('Aqui é a descrição do dataset')
