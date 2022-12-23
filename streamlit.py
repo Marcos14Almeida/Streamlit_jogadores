@@ -12,6 +12,7 @@ Created on Fri Dec 23 15:00:26 2022
 #Then in the project folder open the terminal:
 #pipreq ./
 
+#!git pull origin master
 #!git add "file.py"
 #!git add .
 #!git commit -m "My commit"
@@ -105,7 +106,7 @@ with model_training:
     x = df[[input_feature]]
     y = df[['Gols']]
     
-    regr.fit(x,y)
+    regr.fit(x,y.values.ravel())
     prediction = regr.predict(y)
 
 
