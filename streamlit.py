@@ -107,9 +107,8 @@ with model_training:
     y = df[['Gols']]
     
     regr.fit(x,y.values.ravel())
-    print(y)
-    prediction = regr.predict(y.values.ravel())
-
+    y.columns = ['Gols']
+    prediction = regr.predict(x)
 
     #Outra Coluna
     disp_col.subheader("Mean Absolute Error")
