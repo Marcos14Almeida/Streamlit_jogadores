@@ -10,7 +10,7 @@ Created on Fri Dec 23 15:00:26 2022
 #For automatically install requirements.txt
 #pip install pipreqs
 #Then in the project folder open the terminal:
-#pipreq ./
+#pipreqs ./
 
 #!git pull origin master
 #!git add "file.py"
