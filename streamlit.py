@@ -18,22 +18,30 @@ Created on Fri Dec 23 15:00:26 2022
 #!git commit -m "My commit"
 #!git push origin master
 
+from cool_graphs import interactive_plot
+from homepage import home
+from modelos import modelos
+from testes import testes
+
 import pandas as pd
-import streamlit as st
+import numpy as np
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-header = st.container()
-dataset = st.container()
-features = st.container()
-model_training = st.container()
+import streamlit as st
+import plotly.express as px
+
+
+st.set_page_config(layout="wide")
+
+firulas = st.container()
 
 
 st.markdown(
     """
     <style>
     .main(
-    background-color: #F5F5F5;
+    background-color: #FA6B6D;
     )
     </style>
     """,
@@ -46,79 +54,36 @@ def get_data(filename):
     df = pd.read_csv('data/'+filename+'.csv')
     return df
 
-##############################################
-##############################################
-with header:
-    st.title('Welcome to my awesome project')
-    st.text("""
-            In this project I look into some
-            very cool things I hope you like
-            """)
-    df = get_data('jogadores')
-    st.write(df.head(10))
-    
-    
-    counting = pd.DataFrame(df['PAIS'].value_counts())
-    st.subheader('Distribuição de origem dos jogadores')
-    st.bar_chart(counting)
-   
-    counting100 = pd.DataFrame(df['PAIS'].head(100).value_counts())
-    st.subheader('Distribuição de origem dos jogadores')
-    st.bar_chart(counting100)
-    
-##############################################
-##############################################
-with dataset:
-    st.header('NY City Taxi dataset')    
-    
-##############################################
-##############################################
-with features:  
-    st.header('The features I created')
-    st.markdown('* **first feature** I created this feature beacause of this...')
-    st.markdown('* **second feature** I created this feature beacause of this...')
 
-##############################################
-##############################################
-with model_training:    
-    st.header('Time to train the model')
-    st.text('Aqui é a descrição do dataset')
-    
-    sel_col, disp_col = st.columns(2)
-    
-    max_depth = sel_col.slider('What should be the max_depth of the model?', min_value=10, max_value=100, value=20, step=10)
-
-    st.write(max_depth)
-
-    n_estimators = sel_col.selectbox('How many tress should I use?', options=[100,200,300,'default'], index = 0)
-    if n_estimators == 'default':
-        n_estimators=100
-    
-    
-    sel_col.text('Here is a list of possible features')
-    sel_col.write(df.columns)
-    
-    input_feature = sel_col.text_input('Which feature should I use?','Jogos')
+df = get_data('jogadores')
 
 
-    regr = RandomForestRegressor(max_depth=max_depth, n_estimators=n_estimators)
+def homes(uploaded_file):
+    if uploaded_file:
+        st.sidebar.header('Brinks, esse arquivo é só pra enfeitar')
+    else:
+        st.sidebar.header('To begin please upload a file')
+##############################################
+##############################################
+
     
-    x = df[[input_feature]]
-    y = df[['Gols']]
+with firulas:    
+    optionsList = ['Home','Random Forest','Plot','Teste']
+    options = st.sidebar.radio('Titulo',options=optionsList)
     
-    regr.fit(x,y.values.ravel())
-    y.columns = ['Gols']
-    prediction = regr.predict(x)
-
-    #Outra Coluna
-    disp_col.subheader("Mean Absolute Error")
-    disp_col.write(mean_absolute_error(y, prediction))
-    disp_col.subheader("Mean Squared Error")
-    disp_col.write(mean_squared_error(y, prediction))
-    disp_col.subheader("R² Score")
-    disp_col.write(r2_score(y, prediction))
-
-
+    upload_file = st.sidebar.file_uploader('Upload a file data')
+    #filename = upload_file.name
+    homes(upload_file)
+    
+    # Functions for each of the pages
+    if(options == optionsList[0]):
+        home(df)
+    elif(options == optionsList[1]):
+        modelos(df)
+    elif(options == optionsList[2]):
+        interactive_plot(df)
+    else:
+        testes(df)
 
 
 
