@@ -5,12 +5,12 @@ Created on Fri Dec 23 15:00:26 2022
 @author: marcos
 """
 
-#streamlit run streamlit.py
+# streamlit run streamlit.py
 
-#For automatically install requirements.txt
-#pip install pipreqs
-#Then in the project folder open the terminal:
-#pipreqs ./
+# For automatically install requirements.txt
+# pip install pipreqs
+# Then in the project folder open the terminal:
+# pipreqs ./
 
 #!git pull origin master
 #!git add "file.py"
@@ -45,82 +45,44 @@ st.markdown(
     )
     </style>
     """,
-    unsafe_allow_html=True
-    )
+    unsafe_allow_html=True,
+)
 
-#streamlit cache for big datasets
+# streamlit cache for big datasets
 @st.cache
 def get_data(filename):
-    df = pd.read_csv('data/'+filename+'.csv')
+    df = pd.read_csv("data/" + filename + ".csv")
     return df
 
 
-df = get_data('jogadores')
+df = get_data("jogadores")
 
 
 def homes(uploaded_file):
     if uploaded_file:
-        st.sidebar.header('Brinks, esse arquivo é só pra enfeitar')
+        st.sidebar.header("Brinks, esse arquivo é só pra enfeitar")
     else:
-        st.sidebar.header('To begin please upload a file')
+        st.sidebar.header("To begin please upload a file")
+
+
 ##############################################
 ##############################################
 
-    
-with firulas:    
-    optionsList = ['Home','Random Forest','Plot','Teste']
-    options = st.sidebar.radio('Titulo',options=optionsList)
-    
-    upload_file = st.sidebar.file_uploader('Upload a file data')
-    #filename = upload_file.name
+
+with firulas:
+    optionsList = ["Home", "Random Forest", "Plot", "Teste"]
+    options = st.sidebar.radio("Titulo", options=optionsList)
+
+    upload_file = st.sidebar.file_uploader("Upload a file data")
+    # filename = upload_file.name
     homes(upload_file)
-    
+
     # Functions for each of the pages
-    if(options == optionsList[0]):
+    if options == optionsList[0]:
         home(df)
-    elif(options == optionsList[1]):
+    elif options == optionsList[1]:
         modelos(df)
-    elif(options == optionsList[2]):
+    elif options == optionsList[2]:
         interactive_plot(df)
     else:
         testes(df)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
