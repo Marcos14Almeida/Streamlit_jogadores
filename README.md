@@ -1,15 +1,12 @@
-# Streamlit Players
+# Streamlit Players [link](https://marcos14almeida-streamlit-players-streamlit-oeufdv.streamlit.app/)
 
 ## Project Description
 
 This is a project for visualizing player data using Python, through an interactive and online approach using the Streamlit platform.
 
 ## How to Use the Project
+
 With data from the greatest players of all time, such as goals scored, assists, games, and other parameters, you can compare the best players in history.
-
-Access the website with the visualization on Streamlit:
-
-https://marcos14almeida-streamlit-players-streamlit-oeufdv.streamlit.app/
 
 ## How to Execute the Project
 
