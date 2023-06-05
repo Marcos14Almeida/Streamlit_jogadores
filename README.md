@@ -10,9 +10,7 @@ This is a project for visualizing player data using Python, through an interacti
 
 With data from the greatest players of all time, such as goals scored, assists, games, and other parameters, you can compare the best players in history.
 
-## How to Execute the Project
-
-To edit the project:
+## How to Edit the Project
 
 1- Download all the files.
 
