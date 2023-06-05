@@ -1,27 +1,31 @@
-# Streamlit de Jogadores
+# Streamlit Players
 
-## Descrição do Projeto 
+## Project Description
 
-  Projeto para visualização de dados de jogadores com python, através de uma forma interativa e onlina por meio da plataforma Streamlit
+This is a project for visualizing player data using Python, through an interactive and online approach using the Streamlit platform.
 
-## Como usar o Projeto
+## How to Use the Project
+With data from the greatest players of all time, such as goals scored, assists, games, and other parameters, you can compare the best players in history.
 
- Com os dados dos maiores jogadores de todos os tempos, como gols marcados, assistências, jogos entre outros parâmetros pode-se fazer uma comparação dos melhores jogadores da história.
+Access the website with the visualization on Streamlit:
 
- Acesse o site com a visualização no Streamlit
+https://marcos14almeida-streamlit-players-streamlit-oeufdv.streamlit.app/
 
- https://marcos14almeida-streamlit-jogadores-streamlit-oeufdv.streamlit.app/
+## How to Execute the Project
 
-## Como Executar o projeto
+To edit the project:
 
- Para editar o projeto:
- 1º Baixe todos os arquivos
- 2º Em um terminal na pasta do projeto rode o arquivo com o comando:
-	- streamlit run streamlit.py
-  
- Para criar um servidor online próprio:
-	 1º Crie uma conta no Streamlit
-	 2º Coloque o projeto no Github
-	 3º Conecte no Streamlit com o seu projeto do Github
+Download all the files.
 
- Sempre que atualizar o projeto não esqueça de dar pull para o Github, para o que o programa no servidor também seja atualizado
+In a terminal within the project folder, run the file with the command:
+
+streamlit run streamlit.py
+To create your own online server:
+
+Create an account on Streamlit.
+
+Upload the project to GitHub.
+
+Connect Streamlit to your GitHub project.
+
+Whenever you update the project, don't forget to pull the changes to GitHub so that the program on the server is also updated.
