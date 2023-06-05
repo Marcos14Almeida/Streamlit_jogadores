@@ -19,7 +19,9 @@ To edit the project:
 
 2- In a terminal within the project folder, run the file with the command:
 
- -streamlit run streamlit.py
+```
+streamlit run streamlit.py
+```
 
 To create your own online server:
 
