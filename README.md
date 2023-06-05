@@ -1,4 +1,6 @@
-# Streamlit Players [link](https://marcos14almeida-streamlit-players-streamlit-oeufdv.streamlit.app/)
+# Streamlit Players 
+
+[[link]](https://marcos14almeida-streamlit-players-streamlit-oeufdv.streamlit.app/)
 
 ## Project Description
 
